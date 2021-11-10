@@ -1,27 +1,16 @@
 
 // delegate callback notification
-
-
-// network manager
-
-
+// network manager(ссылку кинул Антон)
 import UIKit
 
 class SecondViewController: UIViewController {
-    
-    
-    
-    
-    
     let redButton = UIButton(frame: CGRect(x: 100, y: 300, width: 100, height: 50))
     let orangeButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
     var textcolor: String?
-    
-    
     var firstVC: FirstViewController?
     var completion: ((String) -> ())?
     //delegate
-    weak var colorDelegate: ColorDelegate?
+    //var colorDelegate: ColorDelegate?
     
     @IBOutlet weak var textLabel: UILabel!
     
@@ -54,7 +43,7 @@ class SecondViewController: UIViewController {
         redButton.setTitle("Start", for: .normal)
         redButton.addTarget(self, action: #selector(RedButtonClick), for: .touchUpInside)
         self.view.addSubview(redButton)
-    
+        
     }
     @IBAction func RedButtonClick(_ sender: UIButton) {
         textcolor = "Red"
@@ -62,10 +51,10 @@ class SecondViewController: UIViewController {
         print("Red Button clicked")
         
         //callback
-        getDataAndBack()
+        //getDataAndBack()
         
         //NotificationCenter
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil, userInfo: dictionary)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil, userInfo: dictionary)
         
         //delegate
         //colorDelegate?.update(text: textcolor!)
@@ -78,11 +67,11 @@ class SecondViewController: UIViewController {
         print("Orange Button clicked")
         
         //callback
-        getDataAndBack()
+        //getDataAndBack()
         
         //NotificationCenter
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil, userInfo: dictionary)
-
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil, userInfo: dictionary)
+        
         //delegate
         //colorDelegate?.update(text: textcolor!)
         
