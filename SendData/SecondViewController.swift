@@ -10,7 +10,7 @@ class SecondViewController: UIViewController {
     var firstVC: FirstViewController?
     var completion: ((String) -> ())?
     //delegate
-    //var colorDelegate: ColorDelegate?
+    var colorDelegate: ColorDelegate?
     
     @IBOutlet weak var textLabel: UILabel!
     
@@ -54,10 +54,10 @@ class SecondViewController: UIViewController {
         //getDataAndBack()
         
         //NotificationCenter
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil, userInfo: dictionary)
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil, userInfo: dictionary)
         
         //delegate
-        //colorDelegate?.update(text: textcolor!)
+        colorDelegate?.update(text: textcolor!)
         
         navigationController?.popViewController(animated: true)
     }
@@ -70,10 +70,10 @@ class SecondViewController: UIViewController {
         //getDataAndBack()
         
         //NotificationCenter
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil, userInfo: dictionary)
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil, userInfo: dictionary)
         
         //delegate
-        //colorDelegate?.update(text: textcolor!)
+        colorDelegate?.update(text: textcolor!)
         
         navigationController?.popViewController(animated: true)
     }

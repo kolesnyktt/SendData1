@@ -26,9 +26,9 @@ class FirstViewController: UIViewController, ColorDelegate {
         self.view.addSubview(goToSecondVCButt)
         
         //NotificationCenter
-        NotificationCenter.default.addObserver(self, selector: #selector(gotNotification), name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(gotNotification), name: NSNotification.Name(rawValue: "notificationFromSecondControllerOrange"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(gotNotification2), name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(gotNotification2), name: NSNotification.Name(rawValue: "notificationFromSecondControllerRed"), object: nil)
     }
     @objc func gotNotification(notofication: Notification) {
         guard let userinfo  = notofication.userInfo else { return }
@@ -41,16 +41,13 @@ class FirstViewController: UIViewController, ColorDelegate {
         label.text = text2
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("Appear")
-        let secondVC = SecondViewController()
-        //delegate
-        //secondVC.colorDelegate = self
-    }
-    
     @objc func GoToSecondViewControllerButton(_ sender: UIButton){
         print("NextVC Button clicked")
         let secondViewController = SecondViewController()
+        
+        //delegate
+        secondViewController.colorDelegate = self
+        
         //callback
         /*secondViewController.completion = {
          text in
