@@ -1,6 +1,5 @@
 
-// delegate callback notification
-// network manager(ссылку кинул Антон)
+
 import UIKit
 
 class SecondViewController: UIViewController {
@@ -47,7 +46,7 @@ class SecondViewController: UIViewController {
     }
     @IBAction func RedButtonClick(_ sender: UIButton) {
         textcolor = "Red"
-        completion?(textcolor!)
+        //completion?(textcolor!)
         print("Red Button clicked")
         
         //callback
@@ -63,7 +62,7 @@ class SecondViewController: UIViewController {
     }
     @IBAction func OrangeButtonClick(_ sender: UIButton) {
         textcolor = "Orange"
-        completion?(textcolor!)
+        //completion?(textcolor!)
         print("Orange Button clicked")
         
         //callback

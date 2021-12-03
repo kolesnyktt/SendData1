@@ -1,11 +1,11 @@
-
 import UIKit
 
 protocol ColorDelegate: class {
     func update(text: String)
-}
+} 
 
 class FirstViewController: UIViewController, ColorDelegate {
+    
     func update(text: String) {
         label.text = text
     }
@@ -20,7 +20,7 @@ class FirstViewController: UIViewController, ColorDelegate {
         label.textAlignment = .center
         label.text = "Color"
         self.view.addSubview(label)
-        goToSecondVCButt.backgroundColor = .black
+        goToSecondVCButt.backgroundColor = .yellow
         goToSecondVCButt.setTitle("Go to 2ndVC", for: .normal)
         goToSecondVCButt.addTarget(self, action: #selector(GoToSecondViewControllerButton), for: .touchUpInside)
         self.view.addSubview(goToSecondVCButt)
@@ -46,7 +46,7 @@ class FirstViewController: UIViewController, ColorDelegate {
         let secondViewController = SecondViewController()
         
         //delegate
-        secondViewController.colorDelegate = self
+        //secondViewController.colorDelegate = self
         
         //callback
         /*secondViewController.completion = {
